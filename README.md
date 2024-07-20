@@ -30,28 +30,21 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 ## Desarrollo
 
-Formulario de contacto funcional
+1. Formulario del login
 
-![image](https://github.com/Arturo-CS/empresa/assets/128654866/cbd26635-d6d6-4d48-b46d-c0b84c499bde)
+![image](https://github.com/user-attachments/assets/4fb3aedd-af8e-4bbd-8b66-9793058431b6)
 
-Vista de datos en una tabla
+Notificación:
 
-![image](https://github.com/Arturo-CS/empresa/assets/128654866/8dd9b415-9ae9-45c3-b20a-44aca1e6412a)
+![image](https://github.com/user-attachments/assets/dffe42c5-4a69-4dca-b465-77e969861eda)
 
-Correo llegado en la plataforma Mailtrap
+2. Ruta /dashboard protegida con autentificación
 
-![image](https://github.com/Arturo-CS/empresa/assets/128654866/b859c29c-ac16-4a8a-aacd-0a366092dff1)
+![image](https://github.com/user-attachments/assets/b1347c63-a913-40e0-b5f1-820f9309b14b)
 
-Edición de datos
+3. Ruta /dashboard sin la autentificación
 
-![image](https://github.com/Arturo-CS/empresa/assets/128654866/e4df0848-c001-4384-87bf-9461eb1c2101)
-![image](https://github.com/Arturo-CS/empresa/assets/128654866/9213370a-0796-49ef-9cb1-231a9d1b7319)
-![image](https://github.com/Arturo-CS/empresa/assets/128654866/00d2e1fb-ecee-4596-9d22-f28267effaae)
-
-Eliminación de un registro
-
-![image](https://github.com/Arturo-CS/empresa/assets/128654866/2541d198-7dd5-475e-b5d6-d6757bc94252)
-![image](https://github.com/Arturo-CS/empresa/assets/128654866/52587ca7-7c11-416e-ae3a-e0c6eb3835b9)
+![image](https://github.com/user-attachments/assets/76f72f11-837c-4e2c-86e3-3937a4b09641)
 
 
 
