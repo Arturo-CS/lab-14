@@ -1,8 +1,8 @@
-# Laboratorio - Empresa
+![image](https://github.com/user-attachments/assets/a1d09081-fab0-4fad-82d3-0334dc07b43d)# Laboratorio - Empresa
 
 ## Description
 
-Aplicación CRUD para el registro, edición y borrado de personas.
+Aplicación CRUD para el manejo de imágenes.
 
 ## Installation
 
@@ -30,21 +30,30 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 ## Desarrollo
 
-1. Formulario del login
+1. Lista de imagenes - inicial
 
-![image](https://github.com/user-attachments/assets/4fb3aedd-af8e-4bbd-8b66-9793058431b6)
+![image](https://github.com/user-attachments/assets/1391d62f-11c4-499e-8b11-1e426a827543)
 
-Notificación:
+2. Formulario para subir imagen
 
-![image](https://github.com/user-attachments/assets/dffe42c5-4a69-4dca-b465-77e969861eda)
+![image](https://github.com/user-attachments/assets/fdabe948-45ce-441e-999c-58a32f50805e)
 
-2. Ruta /dashboard protegida con autentificación
+![image](https://github.com/user-attachments/assets/35f98e4c-19cd-43d4-9a99-b81ee7804a62)
 
-![image](https://github.com/user-attachments/assets/b1347c63-a913-40e0-b5f1-820f9309b14b)
+3. Ver imagen
 
-3. Ruta /dashboard sin la autentificación
+![image](https://github.com/user-attachments/assets/a3271734-452a-4cd1-adb2-a1eaadbb3b44)
 
-![image](https://github.com/user-attachments/assets/76f72f11-837c-4e2c-86e3-3937a4b09641)
+4. Editar una imagen
 
+![image](https://github.com/user-attachments/assets/8b58f373-e92e-4a74-9d7e-1e95beb2ab91)
+![image](https://github.com/user-attachments/assets/2e5af9e2-f322-4e35-a6b4-200850b4b047)
 
+![image](https://github.com/user-attachments/assets/7847308d-a06c-4b43-9596-ae12a65e0c96)
+
+5. Eliminar imagen
+
+![image](https://github.com/user-attachments/assets/4ca9fed7-a061-45f8-99f3-14e32b60ca06)
+
+![image](https://github.com/user-attachments/assets/e4081878-f934-4db2-9df6-9238399dfa70)
 
