@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/a1d09081-fab0-4fad-82d3-0334dc07b43d)# Laboratorio - Empresa
+# Laboratorio - Empresa
 
 ## Description
 
