@@ -19,6 +19,9 @@ function Navbar() {
         <Link href="/" className={buttonVariants({ variant: "secondary", class:"hover:text-emerald-200" })}>
           Inicio
         </Link>
+        <Link href="/images" className={buttonVariants({ variant: "secondary", class:"hover:text-emerald-200" })}>
+          Imagenes
+        </Link>
         {session ? (
           <>
             <Link href="/dashboard" className={buttonVariants({ variant: "secondary", class:"hover:text-emerald-200" })}>
