@@ -3,6 +3,8 @@
 import { v2 as cloudinary } from 'cloudinary';
 import prisma from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
+import sharp from 'sharp';
+import { EventEmitter } from 'events';
 
 // Configuración de Cloudinary
 cloudinary.config({ 
@@ -11,10 +13,18 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-async function uploadToCloudinary(file: File) {
-    const bytes = await file.arrayBuffer();
-    const buffer = Buffer.from(bytes);
+// Crear un EventEmitter para manejar eventos
+const eventEmitter = new EventEmitter();
 
+// Función para optimizar la imagen
+async function optimizeImage(buffer: Buffer): Promise<Buffer> {
+    return sharp(buffer)
+        .resize(800)
+        .webp({ quality: 80 })
+        .toBuffer();
+}
+
+async function uploadToCloudinary(buffer: Buffer) {
     return new Promise((resolve, reject) => {
         cloudinary.uploader.upload_stream(
             { folder: "my_uploads" },
@@ -35,14 +45,23 @@ export async function CreateImage(formData: FormData) {
     }
 
     try {
-        const uploadResult = await uploadToCloudinary(imageFile) as any;
+        const bytes = await imageFile.arrayBuffer();
+        let buffer = Buffer.from(bytes);
 
-        await prisma.image.create({
+        // Optimizar la imagen
+        buffer = await optimizeImage(buffer);
+
+        const uploadResult = await uploadToCloudinary(buffer) as any;
+
+        const image = await prisma.image.create({
             data: {
                 name,
                 imageUrl: uploadResult.secure_url,
             },
         });
+
+        // Emitir evento de imagen creada
+        eventEmitter.emit('imageSaved', { id: image.id, name: image.name });
 
         revalidatePath("/images");
         return { success: true };
@@ -65,14 +84,23 @@ export async function UpdateImage(formData: FormData) {
         let updateData: { name: string; imageUrl?: string } = { name };
 
         if (imageFile) {
-            const uploadResult = await uploadToCloudinary(imageFile) as any;
+            const bytes = await imageFile.arrayBuffer();
+            let buffer = Buffer.from(bytes);
+
+            // Optimizar la imagen
+            buffer = await optimizeImage(buffer);
+
+            const uploadResult = await uploadToCloudinary(buffer) as any;
             updateData.imageUrl = uploadResult.secure_url;
         }
 
-        await prisma.image.update({
+        const updatedImage = await prisma.image.update({
             where: { id },
             data: updateData,
         });
+
+        // Emitir evento de imagen actualizada
+        eventEmitter.emit('imageUpdate', { id: updatedImage.id, name: updatedImage.name });
 
         revalidatePath("/images");
         return { success: true };
@@ -120,3 +148,24 @@ export async function removeImage(formData: FormData) {
         return { success: false, error: "No se pudo eliminar la imagen" };
     }
 }
+
+// Listener para el evento
+eventEmitter.on('imageSaved', async (imageData) => {
+    await prisma.activityLog.create({
+      data: {
+        action: 'IMAGE_SAVED',
+        imageId: imageData.id,
+        imageName: imageData.name,
+      },
+    });
+  });
+
+eventEmitter.on('imageUpdate', async (imageData) => {
+    await prisma.activityLog.create({
+      data: {
+        action: 'IMAGE_UPDATED',
+        imageId: imageData.id,
+        imageName: imageData.name,
+      },
+    });
+  });
