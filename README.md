@@ -1,8 +1,16 @@
-# Laboratorio - Empresa
+# Laboratorio - 14
 
 ## Description
 
-Aplicación CRUD para el manejo de imágenes.
+- Crear y configurar modelos y migraciones
+- Crear un modelo Category con su migración correspondiente.
+- Modificar la tabla de servicios para incluir una relación con categorías.
+- Establecer relaciones entre modelos
+- Modificar controladores y vistas:
+- Actualizar los métodos create() y edit() en el controlador de servicios para incluir categorías.
+- Modificar el formulario de creación/edición de servicios para incluir un select con las categorías.
+- Mostrar categorías en el listado de servicios
+- Actualizar la vista de listado de servicios para mostrar la categoría de cada servicio.
 
 ## Installation
 
@@ -30,30 +38,22 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 ## Desarrollo
 
-1. Lista de imagenes - inicial
+1. Crear servicio con su categoría
 
-![image](https://github.com/user-attachments/assets/1391d62f-11c4-499e-8b11-1e426a827543)
+![image](https://github.com/user-attachments/assets/f8944fc7-1a8f-47b6-bf6b-57ddc62d82a4)
 
-2. Formulario para subir imagen
+2. Lista de servicios con su relacion
 
-![image](https://github.com/user-attachments/assets/fdabe948-45ce-441e-999c-58a32f50805e)
+![image](https://github.com/user-attachments/assets/d4243132-d7f3-4a50-a4ac-945b37eab47a)
 
-![image](https://github.com/user-attachments/assets/35f98e4c-19cd-43d4-9a99-b81ee7804a62)
+3. Actualizar el servicio
 
-3. Ver imagen
+![image](https://github.com/user-attachments/assets/023d83d6-3737-4b54-b04f-b9b8f395ad6d)
 
-![image](https://github.com/user-attachments/assets/a3271734-452a-4cd1-adb2-a1eaadbb3b44)
+4. Filtrado por categorias en los servicios
 
-4. Editar una imagen
+![image](https://github.com/user-attachments/assets/67f449f0-b23a-41dd-8791-c7be37e5a6cb)
 
-![image](https://github.com/user-attachments/assets/8b58f373-e92e-4a74-9d7e-1e95beb2ab91)
-![image](https://github.com/user-attachments/assets/2e5af9e2-f322-4e35-a6b4-200850b4b047)
+![image](https://github.com/user-attachments/assets/ebff0585-0c51-4468-af78-72583c0db2ef)
 
-![image](https://github.com/user-attachments/assets/7847308d-a06c-4b43-9596-ae12a65e0c96)
-
-5. Eliminar imagen
-
-![image](https://github.com/user-attachments/assets/4ca9fed7-a061-45f8-99f3-14e32b60ca06)
-
-![image](https://github.com/user-attachments/assets/e4081878-f934-4db2-9df6-9238399dfa70)
 
