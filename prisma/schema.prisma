@@ -29,10 +29,19 @@ model Person {
   updated_at     DateTime @updatedAt
 }
 
+model Category {
+  id          Int       @id @default(autoincrement()) @db.Integer
+  name        String    @db.VarChar(50)
+  description String?   @db.VarChar(255)
+  services    Service[]
+}
+
 model Service {
-  id          Int    @id @default(autoincrement()) @db.Integer
-  name        String @db.VarChar(20)
-  description String @db.VarChar(50)
+  id          Int       @id @default(autoincrement()) @db.Integer
+  name        String    @db.VarChar(20)
+  description String    @db.VarChar(50)
+  categoryId  Int?
+  category    Category? @relation(fields: [categoryId], references: [id])
 }
 
 model Contact {
